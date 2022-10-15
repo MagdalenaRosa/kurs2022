@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+<!-- potrzebne dla wyszukiwarek, to nie jest że będa kodowane znaki -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>BMI poprawa</title>
+</head>
+
+<body>
+  <header>
+    <h1>Oblicz swój wskaźnik BMI</h1>
+  </header>
+  <main>
+    <h2>Wprowadź dane</h2>
+    <section class="formularz">
+      <form
+        oninput="result1.value = waga.value; result2.value = wzrost.value; result3.value = parseFloat(waga.value/(Math.pow((wzrost.value/100),2))).toFixed(2)">
+        <p>Podaj wagę [kg]</p>
+        <input type="range" name="waga" value="0" min="20" max="200" step=".5" />
+        <output id="result1">0</output>
+        <p>Podaj wzrost [cm]</p>
+        <input type="range" name="wzrost" value="0" min="20" max="220" step=".5" />
+        <output id="result2">0</output>
+        <div class="wynik">
+          <p>Twoje BMI wynosi</p>
+          <output id="result3">0</output>
+        </div>
+      </form>
+    </section>
+    <!-- formularz dla bmi  -->
+    <!-- tabelka bmi -->
+    <div class="tabelka_bmi">
+      <h2>Tabela wyników</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Wskaźnik BMI</th>
+            <th>Opis</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>poniżej 16</td>
+            <td>wygłodzenie</td>
+          </tr>
+          <tr>
+            <td>16,0-16,99</td>
+            <td>wychudzenie</td>
+          </tr>
+          <tr>
+            <td>17,00-18,49</td>
+            <td>niedowaga</td>
+          </tr>
+          <tr>
+            <td>18,5-24,99</td>
+            <td>masa prawidłowa</td>
+          </tr>
+          <tr>
+            <td>25,0-29,99</td>
+            <td>nadwaga</td>
+          </tr>
+          <tr>
+            <td>30,0-34,99</td>
+            <td>otyłość I stopnia</td>
+          </tr>
+          <tr>
+            <td>35,0-39,99</td>
+            <td>otyłość II stopnia</td>
+          </tr>
+          <tr>
+            <td>powyżej 40</td>
+            <td>otyłość III stopnia</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <footer>
+    <p>Created <a href="https://github.com/Rmagda">Magda Rosa</a></p>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
